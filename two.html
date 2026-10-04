@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Switcher DOM</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+margin: 0;
+background: rgb(250, 250, 250);
+}
+.image-box {
+width: 300px;
+height: 200px;
+margin-bottom: 20px;
+border-radius: 8px;
+overflow: hidden;
+box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 24px;
+font-weight: bold;
+color: white;
+background: rgb(59, 130, 246);
+transition: background 0.3s ease;
+}
+button {
+padding: 10px 24px;
+font-size: 16px;
+background: rgb(16, 185, 129);
+color: white;
+border: none;
+border-radius: 6px;
+cursor: pointer;
+}
+button:hover {
+background: rgb(5, 150, 105);
+}
+</style>
+</head>
+<body>
+<div id="displayBox" class="image-box">Image One</div>
+<button id="toggleBtn">Switch Image</button>
+<script>
+const box = document.getElementById("displayBox");
+const btn = document.getElementById("toggleBtn");
+let current = 1;
+btn.addEventListener("click", function() {
+if (current === 1) {
+box.style.background = "rgb(239, 68, 68)";
+box.innerText = "Image Two";
+current = 2;
+} else {
+box.style.background = "rgb(59, 130, 246)";
+box.innerText = "Image One";
+current = 1;
+}
+});
+</script>
+</body>
+</html>
